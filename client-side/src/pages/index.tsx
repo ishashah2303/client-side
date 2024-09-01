@@ -17,7 +17,7 @@ export default function IndexPage() {
           <h1 className={title({ color: "violet" })}>EduNexus&nbsp;</h1>
           <br />
           <h1 className={title()}>
-            Please desgin a good Home Page.
+            Please design a good Home Page.
           </h1>
         </div>
       </section>

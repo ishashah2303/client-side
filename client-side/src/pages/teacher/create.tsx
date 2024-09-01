@@ -38,28 +38,28 @@ export default function Create() {
   return (
     <DefaultLayout>
       <section className="flex items-center justify-center min-h-screen min-w-screen p-20">
-        <Card className="max-w-lg p-10" fullWidth={true}>
-          <h4 className="text-2xl font-bold mb-6">Create Course</h4>
-          <p className="text-sm font-medium mb-2">Course Style:</p>
+        <Card className="max-w-lg p-10" fullWidth={true} style={{ backgroundColor: '#C7C8CC' }}>
+          <h4 className="text-2xl  mb-6 roboto-bold">Create Course</h4>
+          <p className="text-sm mb-2 roboto-regular">Course Name:</p>
           <Input
             fullWidth
             isRequired
             type="text"
             placeholder="Enter the course name"
-            className="mb-4"
+            className="mb-4 roboto-thin"
           />
           <div className="mb-4">
-            <p className="text-sm font-medium mb-2">Course Style:</p>
+            <p className="text-sm roboto-regular mb-2">Course Style:</p>
             <Input
               fullWidth
               isRequired
               type="text"
               placeholder="Describe the course style"
-              className="mb-4"
+              className="mb-4 roboto-thin"
             />
           </div>
           <div className="mb-4">
-            <p className="text-sm font-medium mb-2">Course Structure:</p>
+            <p className="text-sm roboto-regular mb-2">Course Structure:</p>
             {modules.map((module, index) => (
               <div key={index} className="border border-gray-300 rounded-lg p-4 mb-4 relative">
 
@@ -67,7 +67,7 @@ export default function Create() {
                   <Button
                     color="danger"
                     size='sm'
-                    className='absolute top-2 right-2 z-10'
+                    className='absolute top-2 right-2 z-10 roboto-thin'
                     aria-label="Delete Module"
                     onClick={() => deleteModule(index)}
                   >
@@ -82,7 +82,7 @@ export default function Create() {
                   placeholder="Enter module name"
                   value={module.moduleName}
                   onChange={(e) => handleModuleChange(index, 'moduleName', e.target.value)}
-                  className="mb-2"
+                  className="mb-2 roboto-thin"
                 />
                 <Textarea
                   fullWidth
@@ -91,12 +91,12 @@ export default function Create() {
                   placeholder="Enter topics (comma separated)"
                   value={module.topics}
                   onChange={(e) => handleModuleChange(index, 'topics', e.target.value)}
-                  className="mb-2"
+                  className="mb-2 roboto-thin"
                 />
               </div>
             ))}
             <Tooltip content="Add new Module">
-              <Button onClick={addModule} isIconOnly color="default" aria-label="Add Module">
+              <Button onClick={addModule} isIconOnly className='roboto-thin' color="default" aria-label="Add Module">
                 <AddIcon />
               </Button>
             </Tooltip>
@@ -106,10 +106,10 @@ export default function Create() {
             type="file"
             label="Upload Course Related PDFs"
             accept=".pdf"
-            className="text-sm font-medium mb-2"
+            className="text-sm roboto-regular mb-2"
           />
           <Spacer y={1} />
-          <Button color='primary'>Create Baseline Course</Button>
+          <Button color='primary' className='roboto-thin'>Create Baseline Course</Button>
         </Card>
       </section>
     </DefaultLayout>

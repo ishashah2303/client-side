@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       label: "Create",
-      href: "/create",
+      href: "/teacher/create",
     },
   ],
   navMenuItems: [

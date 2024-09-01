@@ -21,7 +21,7 @@ import { Logo } from "@/components/icons";
 export const Navbar = () => {
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar maxWidth="xl" style={{ backgroundColor: '#0F2167' }} position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <Link
@@ -30,7 +30,7 @@ export const Navbar = () => {
             href="/"
           >
             <Logo />
-            <p className="font-bold text-inherit">EduNexus</p>
+            <p className="roboto-regular-italic text-white">EduNexus</p>
           </Link>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
@@ -39,7 +39,7 @@ export const Navbar = () => {
               <Link
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "roboto-bold data-[active=true]:text-primary data-[active=true]:roboto-bold-italic",
                 )}
                 color="foreground"
                 href={item.href}
