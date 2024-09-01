@@ -8,7 +8,9 @@ import {
   Tooltip,
 } from '@nextui-org/react';
 
-import { AddIcon, DeleteIcon } from './AddIcon';
+import { AddIcon } from './AddIcon';
+import DefaultLayout from "@/layouts/default";
+
 
 interface Module {
   moduleName: string;
@@ -34,31 +36,30 @@ export default function Create() {
   };
 
   return (
-    <div>
+    <DefaultLayout>
       <section className="flex items-center justify-center min-h-screen min-w-screen p-20">
         <Card className="max-w-lg p-10" fullWidth={true}>
           <h4 className="text-2xl font-bold mb-6">Create Course</h4>
+          <p className="text-sm font-medium mb-2">Course Style:</p>
           <Input
             fullWidth
             isRequired
             type="text"
-            label="Course Name"
             placeholder="Enter the course name"
             className="mb-4"
           />
           <div className="mb-4">
-            <p className="text-sm font-medium mb-2">Course Style</p>
+            <p className="text-sm font-medium mb-2">Course Style:</p>
             <Input
               fullWidth
               isRequired
               type="text"
-              label="Course Style"
               placeholder="Describe the course style"
               className="mb-4"
             />
           </div>
           <div className="mb-4">
-            <p className="text-sm font-medium mb-2">Course Structure</p>
+            <p className="text-sm font-medium mb-2">Course Structure:</p>
             {modules.map((module, index) => (
               <div key={index} className="border border-gray-300 rounded-lg p-4 mb-4 relative">
 
@@ -66,11 +67,11 @@ export default function Create() {
                   <Button
                     color="danger"
                     size='sm'
-                    className='absolute top-2 right-2 z-10' // Adjusted z-index
+                    className='absolute top-2 right-2 z-10'
                     aria-label="Delete Module"
                     onClick={() => deleteModule(index)}
                   >
-                    <DeleteIcon className='h-20' />
+                    Delete
                   </Button>
                 </Tooltip>
                 <Input
@@ -102,16 +103,15 @@ export default function Create() {
           </div>
           <Input
             fullWidth
-            isRequired
             type="file"
-            label="Upload Course PDF"
+            label="Upload Course Related PDFs"
             accept=".pdf"
-            className="mb-4"
+            className="text-sm font-medium mb-2"
           />
           <Spacer y={1} />
-          <Button color='primary'>Create Course</Button>
+          <Button color='primary'>Create Baseline Course</Button>
         </Card>
       </section>
-    </div>
+    </DefaultLayout>
   );
 }
