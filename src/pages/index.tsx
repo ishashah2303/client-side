@@ -2,7 +2,8 @@ import { Link } from "@nextui-org/link";
 import { Snippet } from "@nextui-org/snippet";
 import { Code } from "@nextui-org/code";
 import { button as buttonStyles } from "@nextui-org/theme";
-
+import {Image} from "@nextui-org/image";
+landingimage from "src/assets/landingpage.jfif";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
@@ -16,9 +17,14 @@ export default function IndexPage() {
           <h1 className={title()}>Welcome to &nbsp;</h1>
           <h1 className={title({ color: "violet" })}>EduNexus&nbsp;</h1>
           <br />
-          <h1 className={title()}>
-            Please design a good Home Page.
+          <h1 className="text-yellow-500">
+            Innovative Learning. Seamless Teaching. Smart Futures
           </h1>
+          <Image
+            width={1600}
+            alt="NextUI hero Image"
+            src={landingimage}
+          />
         </div>
       </section>
     </DefaultLayout>
